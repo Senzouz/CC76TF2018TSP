@@ -140,7 +140,6 @@ print(tsp(G4))
 ```
   - Prim
    
-
 ``` python
 import math
 import heapq as hq
@@ -166,11 +165,39 @@ def prim(G):
     return path, dist
 
 ```
+  - Dijkstra
+   
+``` python
 
-9. Conclusiones
+def dijkstra(G, s):
+    n = len(G)
+    visited = [False]*n
+    weights = [math.inf]*n
+    path = [None]*n
+    queue = []
+    weights[s] = 0
+    c = 0
+    hq.heappush(queue, (0, s))
+    while len(queue) > 0:
+        g, u = hq.heappop(queue)
+        visited[u] = True
+        for w, v in G[u]:
+            if not visited[v]:
+                f = g + w
+                if f < weights[v]:
+                    weights[v] = f
+                    path[v] = u
+                    c += w
+                    hq.heappush(queue, (f, v))
+    return path, weights, c
+    
+    
+    
+```
 
 
-10. Bibliografia
+
+9. Bibliografia
 
 (1) ESPINOZA, Daniel. El Problema del Vendedor Viajero (TSP) y Programación Entera (IP).Chile. Universidad de Chile. [http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf](http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf) (Consultado el dia 13 de setiembre de 2018)
 
