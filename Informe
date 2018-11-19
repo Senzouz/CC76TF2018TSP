@@ -77,7 +77,7 @@ muchas áreas de optimización matemática.
     
 8. Algoritmo implementado
 
-**Lectura de texto
+**Lectura de texto**
   ```python
 def Read(filename):
     G = []
