@@ -194,10 +194,12 @@ def dijkstra(G, s):
     
     
 ```
+9. Conclusiones
+
+Durante las pruebas con los diferentes algoritmos, podemos comprobar que son efecientes con los diferentes datasets en un tiempo promedio de 1 a 3 segundos.
 
 
-
-9. Bibliografia
+10. Bibliografia
 
 (1) ESPINOZA, Daniel. El Problema del Vendedor Viajero (TSP) y Programación Entera (IP).Chile. Universidad de Chile. [http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf](http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf) (Consultado el dia 13 de setiembre de 2018)
 
