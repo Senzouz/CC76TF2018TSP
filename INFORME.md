@@ -58,17 +58,32 @@ muchas áreas de optimización matemática.
     decir, comprueba que la nueva decisión junto con todas las tomadas anteriormente no violan las restricciones y así consigue una 
     nueva secuencia de decisiones factible. 
     
+  
+   - Algoritmo Prm:
    
-    data_set2 - entre 1 a 2 segundos
-    date_set3 - distritos entre 3 a 4 segundos
+    En informática, el algoritmo de Prim (también conocido como Jarník) es un algoritmo codicioso que encuentra un árbol de expansión ínimo para un gráfico no dirigido ponderado. ... Sin embargo, al ejecutar el algoritmo de Prim por separado para cada componente conectado del gráfico, también se puede usar para encontrar el bosque de expansión mínimo.
+    
+    
+    - Algoritmo Dijsktra:
+    
+    El algoritmo original de Dijkstra no usa una cola de prioridad mínima y se ejecuta en el tiempo :
+                O (| V | ^ {2})} O (| V | ^ {2})
+                
+         donde | V |} | V | es el número de nodos
+    
+    La idea de este algoritmo también se da en Leyzorek et al. 1957. La implementación se basa en una cola de prioridad mínima implementada por un montón Fibonacci y se ejecuta en:
+                O (| E | + | V | \ log | V |)} O (| E | + | V | \ log | V |) 
+                
+         donde  | E | es el número de bordes se debe a Fredman y Tarjan 1984. Este es asintóticamente el algoritmo de ruta más corta conocido de fuente única más rápido para gráficos dirigidos arbitrarios con no-ilimitado pesos negativos. Sin embargo, los casos especializados (como los pesos acotados / enteros, los gráficos acíclicos dirigidos, etc.) pueden mejorarse aún más como se detalla en § Variantes especializadas.
+    
     
 6. Solucion
 
     a. Prueba numero 1 .- Consiste en adjuntar los 25 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
       
-    b. Prueba numero 2 .- Consiste en adjuntar los 171 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+    b. Prueba numero 2 .- Consiste en adjuntar los 171 capitales provinciales (puntos de coordenadas) en un txt y probar el algoritmo.
       
-    c. Prueba numero 3 .- Consiste en adjuntar los 1687 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+    c. Prueba numero 3 .- Consiste en adjuntar los 1687 capitales distritales (puntos de coordenadas) en un txt y probar el algoritmo.
     
     
 8. Algoritmo implementado
@@ -196,7 +211,10 @@ def dijkstra(G, s):
 ```
 9. Conclusiones
 
-Durante las pruebas con los diferentes algoritmos, podemos comprobar que son efecientes con los diferentes datasets en un tiempo promedio de 1 a 3 segundos.
+Durante las pruebas con los diferentes algoritmos, podemos comprobar que son efecientes con los diferentes datasets en un tiempo promedio:
+    date_set1 . menos de 1 segundo.  
+    data_set2 - entre 1 a 2 segundos.
+    date_set3 - distritos entre 3 a 4 segundos.
 
 
 10. Bibliografia
