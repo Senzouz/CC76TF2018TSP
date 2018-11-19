@@ -64,16 +64,11 @@ muchas áreas de optimización matemática.
     
 6. Solucion
 
-    1. Prueba numero 1 .- Consiste en adjuntar los 25 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
-    
-    
-    2. Prueba numero 2 .- Consiste en adjuntar los 171 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
-       
-    
-    
-    
-    
-    3. Prueba numero 3 .- Consiste en adjuntar los 1687 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+    a. Prueba numero 1 .- Consiste en adjuntar los 25 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+      
+    b. Prueba numero 2 .- Consiste en adjuntar los 171 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+      
+    c. Prueba numero 3 .- Consiste en adjuntar los 1687 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
     
     
 8. Algoritmo implementado
@@ -94,9 +89,9 @@ def distancia(nodo1, nodo2):
 
 ```
 
+  a). 1er Algoritmo: **Algoritmo Greedy**
 
-**Algoritmo Greedy**
-```
+```python
 def tsp(G, s=None):
     if s is None:
         s = G[0]
@@ -118,8 +113,59 @@ G4 = Read('dataset4.txt')
 print(tsp(G4))
 
 ```
+  b)2do Algoritmo **Algoritmo prim**
+- Creacion del Grafo de puntos de llegada - distancia
 
+```python
+    def Grafito(CPoblados):
+    n = len(CPoblados)
+    G = [[] for _ in range(n)]
+    N = []
+    for _ in range(n):
+        N.append(_)
+    j = -1
+    for i in CPoblados:
+        auxiliar = CPoblados[:]
+        auxiliar.remove(i)
+        CantDestNodo = rnd.randint(2,3)
+        j +=1
+        for _ in range(CantDestNodo):
+            dest = rnd.choice(auxiliar)
+            auxiliar.remove(dest)
+            dist = distancia(i,dest)
+            conexion = (dist, int(CPoblados.index(dest)))
+            G[j].append(conexion)
+    return G
+ ```
     
+    b)2do Algoritmo **Algoritmo prim**
+    
+    ``` python
+def prim(G):
+    n = len(G)
+    dist = [math.inf]*n
+    path = [-1]*n
+    visited = [False]*n
+    q = []
+    hq.heappush(q, (0, 0))
+    dist[0] = 0
+    while len(q) > 0:
+        _, u = hq.heappop(q)
+        if not visited[u]:
+            visited[u] = True
+            for w, v in G[u]:
+                if not visited[v] and w < dist[v]:
+                    dist[v] = w
+                    path[v] = u
+                    hq.heappush(q, (w, v))
+
+    return path, dist
+
+```
+
+9. Conclusiones
+
+
 10. Bibliografia
 
 (1) ESPINOZA, Daniel. El Problema del Vendedor Viajero (TSP) y Programación Entera (IP).Chile. Universidad de Chile. [http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf](http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf) (Consultado el dia 13 de setiembre de 2018)
