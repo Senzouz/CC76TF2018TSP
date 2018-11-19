@@ -136,11 +136,15 @@ print(tsp(G4))
             conexion = (dist, int(CPoblados.index(dest)))
             G[j].append(conexion)
     return G
- ```
-    
-    b)2do Algoritmo **Algoritmo prim**
-    
-    ``` python
+
+```
+  - Prim
+   
+
+``` python
+import math
+import heapq as hq
+
 def prim(G):
     n = len(G)
     dist = [math.inf]*n
