@@ -60,3 +60,47 @@ muchas áreas de optimización matemática.
    
     data_set2 - entre 1 a 2 segundos
     date_set3 - distritos entre 3 a 4 segundos
+    
+6. Solucion
+
+    1. Prueba numero 1 .- Consiste en adjuntar los 25 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+    
+    
+    2. Prueba numero 2 .- Consiste en adjuntar los 171 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+       
+    
+    
+    
+    
+    3. Prueba numero 3 .- Consiste en adjuntar los 1687 capitales regionales (puntos de coordenadas) en un txt y probar el algoritmo.
+    
+    
+8. Algoritmo implementado
+
+**Lectura de texto
+  ```python
+def Read(filename):
+    G = []
+    i = 0
+    file = open(filename)
+    for line in file:
+        G.append([float(x) for x in line.split('\t')])
+  ```
+
+
+
+
+
+    
+10. Bibliografia
+
+(1) ESPINOZA, Daniel. El Problema del Vendedor Viajero (TSP) y Programación Entera (IP).Chile. Universidad de Chile. [http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf](http://www.dii.uchile.cl/~daespino/PApers/TSP_and_IP_chile_050820.pdf) (Consultado el dia 13 de setiembre de 2018)
+
+(2) COOK, William. The Travelling Salesman Problem. Canada. University of Waterloo. [http://www.math.uwaterloo.ca/tsp/problem/index.html]
+
+(3) Traveling Salesman Problem (TSP) Implementation
+[https://www.geeksforgeeks.org/traveling-salesman-problem-tsp-implementation/]
+
+(4)Travelling salesman using brute-force and heuristics
+[https://codereview.stackexchange.com/questions/81865/travelling-salesman-using-brute-force-and-heuristics]
+
