@@ -86,10 +86,37 @@ def Read(filename):
     for line in file:
         G.append([float(x) for x in line.split('\t')])
   ```
+**Calculo de distancia**
+```python
+def distancia(nodo1, nodo2):
+    return ((nodo1[0] - nodo2[0])**2 + (nodo1[1] - nodo2[1])**2) ** 0.5
+
+```
 
 
+**Algoritmo Greedy**
+```
+def tsp(G, s=None):
+    if s is None:
+        s = G[0]
+    por_visitar = G
+    camino = [s]
+    por_visitar.remove(s)
+    while por_visitar:
+        proximo = min(por_visitar, key=lambda x: distancia(camino[-1], x))
+        camino.append(proximo)
+        por_visitar.remove(proximo)
+    return camino
+G = Read('dataset.txt')
+print(tsp(G))
+G2 = Read('dataset2.txt')
+print(tsp(G2))
+G3 = Read('dataset3.txt')
+print(tsp(G3))
+G4 = Read('dataset4.txt')
+print(tsp(G4))
 
-
+```
 
     
 10. Bibliografia
